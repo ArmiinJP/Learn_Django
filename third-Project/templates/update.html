@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method='post' action='' novalidate>
+    <table>
+        {% csrf_token %}
+        {{ update_form.as_table }}
+    </table>
+    <br>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href='{% url 'menu' %}' class="btn btn-secondary" role="button" aria-pressed="true">Back </a>
+</form>
+
+
+{% endblock content %}

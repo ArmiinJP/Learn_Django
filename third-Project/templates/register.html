@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+
+<nav class="navbar navbar-light style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="">SIGN UP</a>
+</nav>
+<br>
+
+    <form action="" method='post' novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+        {% comment %} <a href='{% url 'home_user' %}' class="btn btn-secondary" role="button" aria-pressed="true">Back</a> {% endcomment %}
+    </form>
+{% endblock  %}
+

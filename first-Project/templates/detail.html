@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<br>
+<h4>name is: <b>{{data.title}}</b><br></h4>
+<h4>body is: <b>{{data.body}}</b><br></h4>
+<h4>data is: <b>{{data.created}}</b><br></h4>
+<br>
+<a href="{% url 'delete' data.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'update' data.id %}" class="btn btn-info">Update</a>
+{% endblock%}

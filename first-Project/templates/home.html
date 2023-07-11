@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    <p>{{request.user}}</p>
+    {% for i in test %}
+       title is: <a href="{% url 'details' i.id %}">{{i.title}}</a>
+       <br> 
+    {% endfor %}
+{% endblock%}

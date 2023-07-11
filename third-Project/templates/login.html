@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}  
+
+<nav class="navbar navbar-light">
+    <a class="navbar-brand" href="">LOG IN</a>
+</nav>
+
+<form action="" method='post' novalidate>
+        <br>
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+{% endblock  %}

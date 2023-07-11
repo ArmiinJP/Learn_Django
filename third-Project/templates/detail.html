@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}  
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="row">Name</th>
+        <th scope="row">Category</th>
+        <th scope="row">Description</th>
+        <th scope="row">Deadline</th>
+    </tr>
+    </thead>
+        <tbody>
+        <tr>
+            <td>{{todo.name}}</td>
+            <td>{{todo.category}}</td>
+            <td>{{todo.description}}</td>
+            <td>{{todo.deadline}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{% url 'menu' %}" class="btn btn-secondary" role="button" aria-pressed="true">Back</a>
+    <a href="{% url 'update' todo.id %}" class="btn btn-primary" role="button" aria-pressed="true">Update</a>
+    <a href="{% url 'delete' todo.id %}" class="btn btn-danger" role="button" aria-pressed="true">Delete</a>
+
+
+{% endblock  %}
