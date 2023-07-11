@@ -1,0 +1,18 @@
+{% comment %} 
+{% for p in posts %}
+    <h1>{{p.title}}<h2>
+    
+{% endfor %} {% endcomment %}
+
+ <h1>title:     {{post.title}}</h1>
+ <h2>text:      {{post.text}}</h2>
+comments:
+{% for c in comments%}
+    <ul>
+        <li>
+            {{c.text}}
+        </li>
+    </ul>
+{% endfor %}
+
+<a href="/list/">Back</a>
