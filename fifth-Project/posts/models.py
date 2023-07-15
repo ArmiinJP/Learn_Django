@@ -2,6 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+# تعریف کردن یک منیجر مثل همون ابجکتس با این تفاوت که یک فیلتر بیشتر برای این منیجر گذاشتیم
+class PostLiveManager(models.Manager):
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # اضافه کردن یک فیلتر بیشتر
+        queryset = queryset.filter(is_enable=False)
+        return queryset
+
 class Post(models.Model):
     #fieldName = Discriptor()
     title = models.CharField(max_length=50)
@@ -27,6 +35,8 @@ class Post(models.Model):
     def __str__(self):
         return f'{str(self.id)}-{self.title}' 
     
+    objects = models.Manager()
+    live = PostLiveManager()
       
 class Comment(models.Model):
     # اضافه کردن کامنت برای پست ها که خودشون مدل دارند
